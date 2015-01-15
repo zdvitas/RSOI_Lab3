@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 {% block soft %}
+        <div align="center">Компьютер</div>
+    <div align="center"><h2><i>Name</i> : {{ pc.name }} ||| {{ pc.params }}</h2></div>
        <table class="table table-bordered table-striped">
         <thead>
             <th>#</th>
@@ -13,14 +15,14 @@
         </thead>
 
         <tbody>
-        {% for soft in object_list %}
+        {% for soft in softs.data %}
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ soft.name }}</td>
                 <td>{{ soft.producer }}</td>
-                <td><a class="btn" href="/admin/base/computer/{{ comp.id }}" target="_top"><i class="icon-pencil"></i></a></td>
-                <td><a class="btn" href="/admin/base/computer/{{ comp.id }}" target="_top"><i class="icon-search"></i></a></td>
-                <td><a class="btn" href="/admin/base/computer/{{ comp.id }}" target="_top"><i class="icon-minus"></i></a></td>
+                <td><a class="btn" href="/soft/edit/{{ soft.id }}" target="_top"><i class="icon-pencil"></i></a></td>
+                <td><a class="btn" href="/admin/base/computer/{{ soft.id }}" target="_top"><i class="icon-search"></i></a></td>
+                <td><a class="btn" href="/soft/delete/{{ soft.id }}" target="_top"><i class="icon-minus"></i></a></td>
 
             </tr>
 
