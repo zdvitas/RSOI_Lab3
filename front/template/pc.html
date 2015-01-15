@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block pc %}
+       <table class="table table-bordered table-striped">
+        <thead>
+            <th>#</th>
+            <th>Название</th>
+            <th>Владелец</th>
+            <th>Параметры</th>
+
+
+            <th width="40px"></th>
+            <th width="40px"></th>
+            <th width="40px"></th>
+        </thead>
+
+        <tbody>
+        {% for comp in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ comp.name }}</td>
+                <td>{{ comp.owner }}</td>
+                <td>{{ comp.params }}</td>
+                <td><a class="btn" href="/pc/edit/{{ comp.id }}" target="_top"><i class="icon-pencil"></i></a></td>
+                <td><a class="btn" href="/pc/{{ comp.id }}" target="_top"><i class="icon-search"></i></a></td>
+                <td><a class="btn" href="/pc/delete/{{ comp.id }}" target="_top"><i class="icon-minus"></i></a></td>
+            </tr>
+
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

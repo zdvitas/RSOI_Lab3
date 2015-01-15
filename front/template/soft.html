@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block soft %}
+       <table class="table table-bordered table-striped">
+        <thead>
+            <th>#</th>
+            <th>Название</th>
+            <th>Производитель</th>
+
+            <th width="40px"></th>
+            <th width="40px"></th>
+            <th width="40px"></th>
+
+        </thead>
+
+        <tbody>
+        {% for soft in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ soft.name }}</td>
+                <td>{{ soft.producer }}</td>
+                <td><a class="btn" href="/admin/base/computer/{{ comp.id }}" target="_top"><i class="icon-pencil"></i></a></td>
+                <td><a class="btn" href="/admin/base/computer/{{ comp.id }}" target="_top"><i class="icon-search"></i></a></td>
+                <td><a class="btn" href="/admin/base/computer/{{ comp.id }}" target="_top"><i class="icon-minus"></i></a></td>
+
+            </tr>
+
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
