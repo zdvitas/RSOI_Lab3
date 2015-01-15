@@ -6,6 +6,7 @@ urlpatterns = patterns('',
     url(r'^$', views.home, name='home'),
     url(r'^auth$', views.auth, name='home'),
     url(r'^pc$', views.pc_list, name='home'),
+    url(r'^pc/add$', views.pc_add, name='home'),
 
     # url(r'^user/me', views.user_me),
     url(r'^pc/(?P<id>\d+)/$', views.pc_one),
